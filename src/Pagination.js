@@ -3,7 +3,8 @@ import FilteredPost from './FilteredPost'
 
 export default function Pagination({ data, RenderComponent, title, pageLimit, dataLimit, b_name }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const fav = JSON.parse(window.localStorage.getItem('fav'))
+  let fav = [];
+  JSON.parse(window.localStorage.getItem('fav')) ? fav = JSON.parse(window.localStorage.getItem('fav')) : fav = []
   const [filtered, setFiltered] = useState(fav)
   window.localStorage.setItem('fav', JSON.stringify(filtered))
 
