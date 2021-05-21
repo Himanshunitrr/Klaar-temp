@@ -18,8 +18,6 @@ export default function Pagination({
   const [filtered, setFiltered] = useState(fav);
   window.localStorage.setItem("fav", JSON.stringify(filtered));
 
-  console.log(data);
-
   b_name !== ""
     ? (data = data.filter((bank) => bank.bank_name === b_name))
     : (data = data);

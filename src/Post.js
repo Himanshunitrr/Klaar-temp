@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 export default function Post(props) {
   let setFiltered = props.setFiltered;
   let filtered = props.filtered;
-  const { branch, bank_name, address } = props.data;
-
+  const { branch, bank_name, address, ifsc } = props.data;
+  let link = "/" + ifsc.toString()
   return (
     <div className="post">
-      <h1>{bank_name}</h1>
+      <Link to={link}>
+        <h1>{bank_name}</h1>
+      </Link>
       <small>{branch}</small>
       <p>{address}</p>
       <button
